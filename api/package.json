@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint *.js tests/*.js",
+    "test": "node tests/*.js  "
+  },
+  "dependencies": {
+    "apollo-server": "^2.22.2",
+    "countries-list": "^2.6.1",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
+    "provinces": "^1.11.0",
+    "sift": "^13.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.24.0"
+  }
+}
