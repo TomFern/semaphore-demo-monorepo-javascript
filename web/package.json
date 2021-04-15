@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint --ext js,jsx,ts,tsx",
     "test": "node tests/unit/*.js",
-    "integration": "tests/integration/*.sh"
+    "test-integration": "tests/integration/*.sh"
   },
   "dependencies": {
     "@apollo/client": "^3.3.14",
@@ -22,6 +22,8 @@
     "cheerio": "^1.0.0-rc.6",
     "eslint": "^7.24.0",
     "eslint-plugin-react": "^7.23.2",
+    "esm": "^3.2.25",
+    "next-test-api-route-handler": "^1.2.23",
     "supertest": "^6.1.3"
   }
 }
