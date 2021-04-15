@@ -1,4 +1,10 @@
-# Monorepo Yarn2 Demo
+# JavaScript Monorepo Demo
+
+[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-monorepo-javascript/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-monorepo-javascript)
+
+This demo repository teaches you how to use [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage JavaScript [monorepos](https://semaphoreci.com/blog/what-is-monorepo). You’ll build a monorepo from two separate applications.
+
+Check the `final` branch to see the end result.
 
 ## Setup monorepo with Yarn workspaces
 
@@ -9,25 +15,30 @@
     $ yarn set version berry
     ```
 4. Initialize top-level `package.json`
-```bash
-$ yarn init -w
-```
+    ```bash
+    $ yarn init -w
+    ```
 5. Move all projects to workspaces:
-```bash
-$ git mv api web packages
-$ yarn workspaces list
-```
+    ```bash
+    $ git mv api web packages
+    $ yarn workspaces list
+    ```
 6. Install modules
-```bash 
-$ yarn install
-```
+    ```bash
+    $ yarn install
+    ```h
+7. Delete old ~yarn.lock~
+    ```bash
+    $ git rm packages/api/yarn.lock packages/web/yarn.lock
+    ```
 7. Add the new files to the repository. This will also commit all dependencies.
-```bash
-$ git add .yarnrc.yml .yarn .gitattributes .gitignore package.json
-$ git commit -m "setup monorepo"
-$ git push origin main
-```
-## Run development version 
+    ```bash
+    $ git add .yarnrc.yml .yarn yarn.lock .gitattributes .gitignore package.json .pnp.js
+    $ git commit -m "finalize setup monorepo"
+    $ git push
+    ```
+
+## Run development version
 
 ```bash
 $ yarn workspace api start &
@@ -41,8 +52,6 @@ $ yarn workspace api start &
 $ yarn workspace web build
 $ yarn workspace web export
 ```
-
-## License
 
 ## License
 
