@@ -47,20 +47,20 @@ Returns:
 To build the project:
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
 To run the server
 
 ```bash
-$ npm start
+$ yarn start
 ```
 
 To run unit tests
 
 ```bash
-$ npm start &
-$ npm test
+$ yarn start &
+$ yarn test
 ```
 ## Using the server
 
@@ -73,10 +73,6 @@ $ curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ country
 
 {"data":{"country":{"name":"Brazil","native":"Brasil","capital":"Brasília","emoji":"🇧🇷","currency":"BRL","languages":[{"code":"pt","name":"Portuguese"}]}}}
 ```
-
-## License
-
-
 ## License
 
 MIT License
