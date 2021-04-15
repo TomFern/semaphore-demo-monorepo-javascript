@@ -1,6 +1,6 @@
 # JavaScript Monorepo Demo
 
-[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-monorepo-javascript/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-monorepo-javascript)
+[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-monorepo-javascript/branches/main.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-monorepo-javascript)
 
 This demo repository teaches you how to use [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage JavaScript [monorepos](https://semaphoreci.com/blog/what-is-monorepo). You’ll build a monorepo from two separate applications.
 
