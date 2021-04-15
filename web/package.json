@@ -1,14 +1,16 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "private": true,
+  "name": "capitals-static",
+  "description": "A Next.js static website showing the capitals of every country.",
+  "author": "Tomas Fernandez",
+  "repository": "https://github.com/TomFern/semaphore-demo-monorepo-javascript",
+  "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext js,jsx,ts,tsx",
     "test": "node tests/unit/*.js",
-    "test-integration": "tests/integration/*.sh"
+    "test-integration": "node tests/integration/*.sh"
   },
   "dependencies": {
     "@apollo/client": "^3.3.14",

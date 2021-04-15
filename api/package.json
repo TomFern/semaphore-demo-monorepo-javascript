@@ -1,5 +1,9 @@
 {
-  "name": "api",
+  "name": "countries-graphql",
+  "description": "A GraphQL API server that servers information about countries, cities, and continents. Based on trevorblades/countries.",
+  "author": "Tomas Fernandez",
+  "repository": "https://github.com/TomFern/semaphore-demo-monorepo-javascript",
+  "version": "1.0.0.",
   "scripts": {
     "start": "node server.js",
     "lint": "eslint *.js tests/*.js",

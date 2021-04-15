@@ -6,24 +6,32 @@ This demo repository teaches you how to use [Yarn Workspaces](https://classic.ya
 
 Check the `final` branch to see the end result.
 
+## Contents
+
+This repository contains two projects. Their folders are:
+
+- `api`: An API that returns geographical information.
+- `web`: A static website generated from the information returned by the API.
+
+You can run each project independently or in combination. Check each folder to learn how to run them piecemeal. The next section shows how to run them together.
 ## Setup monorepo with Yarn workspaces
 
-1. Fork this repo
-2. Clone it to your machine
-3. Download latest yarn version:
+1. Fork this repo.
+2. Clone it to your machine.
+3. Download latest yarn version.
     ```bash
     $ yarn set version berry
     ```
-4. Initialize top-level `package.json`
+4. Initialize top-level `package.json`.
     ```bash
     $ yarn init -w
     ```
-5. Move all projects to workspaces:
+5. Move projects to their workspaces.
     ```bash
     $ git mv api web packages
     $ yarn workspaces list
     ```
-6. Install modules
+6. Install all modules.
     ```bash
     $ yarn install
     ```h
@@ -37,7 +45,6 @@ Check the `final` branch to see the end result.
     $ git commit -m "finalize setup monorepo"
     $ git push
     ```
-
 ## Run development version
 
 ```bash
@@ -45,6 +52,36 @@ $ yarn workspace api start &
 $ yarn workspace web dev
 ```
 
+### Run tests
+
+```bash
+# Linting
+$ yarn workspace api lint
+$ yarn workspace web test
+
+# Unit tests - api
+$ yarn workspace api start &
+$ yarn workspace api test
+
+# Unit tests - web
+$ yarn workspace web test
+
+# Integration tests
+$ yarn workspace api start &
+$ yarn workspace web build
+$ yarn workspace web start &
+$ yarn workspace web test-integration
+```
+### Add modules in one workspace
+
+```bash
+$ yarn workspace <workspace-name> add <package-name>
+```
+### Run scripts
+
+```bash
+$ yarn worksapce <workspace-name> run <script-name>
+```
 ## Build static site
 
 ```bash
@@ -52,7 +89,6 @@ $ yarn workspace api start &
 $ yarn workspace web build
 $ yarn workspace web export
 ```
-
 ## License
 
 MIT License

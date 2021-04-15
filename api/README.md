@@ -1,4 +1,4 @@
-# GraphQL API server for country data
+# Countries GraphQL API Server
 
 The code in this project is based on [trevorblades/countries](https://github.com/trevorblades/countries).
 
@@ -42,7 +42,7 @@ Returns:
 }
 ```
 
-## Running
+## Running it
 
 To build the project:
 

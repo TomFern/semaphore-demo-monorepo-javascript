@@ -1,15 +1,21 @@
+# Capitals of the world
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This static website shows capital cities and countries information based on data returned by an API endpoint.
+
 ## Getting Started
 
-Install packages:
+Install modules with Yarn:
 
 ```bash
 $ yarn install
 ```
 
-First, run the development server:
+Run the development server. Default API endpoint is `localhost:4000`, you can change with the `API_URL` environment variable
 
 ```bash
+$ export API_URL=https://countries.trevorblades.com/
 $ yarn dev
 ```
 
@@ -18,6 +24,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+
+## Build static site
+
+```bash
+$ export API_URL=https://countries.trevorblades.com/
+$ yarn build
+```
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
