@@ -34,15 +34,15 @@ You can run each project independently or in combination. Check each folder to l
 6. Install all modules.
     ```bash
     $ yarn install
-    ```h
-7. Delete old ~yarn.lock~
+    ```
+7. Delete old `yarn.lock`
     ```bash
     $ git rm packages/api/yarn.lock packages/web/yarn.lock
     ```
 7. Add the new files to the repository. This will also commit all dependencies.
     ```bash
     $ git add .yarnrc.yml .yarn yarn.lock .gitattributes .gitignore package.json .pnp.js
-    $ git commit -m "finalize setup monorepo"
+    $ git commit -m "finalize monorepo setup"
     $ git push
     ```
 ## Run development version
