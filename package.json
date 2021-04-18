@@ -1,0 +1,7 @@
+{
+  "name": "semaphore-demo-monorepo-javascript",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
