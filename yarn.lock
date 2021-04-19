@@ -753,6 +753,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"api@workspace:packages/api":
+  version: 0.0.0-use.local
+  resolution: "api@workspace:packages/api"
+  dependencies:
+    apollo-server: ^2.22.2
+    chai: ^4.3.4
+    countries-list: ^2.6.1
+    eslint: ^7.24.0
+    graphql: ^15.5.0
+    graphql-request: ^3.4.0
+    provinces: ^1.11.0
+    sift: ^13.5.0
+  languageName: unknown
+  linkType: soft
+
 "apollo-cache-control@npm:^0.12.0":
   version: 0.12.0
   resolution: "apollo-cache-control@npm:0.12.0"
@@ -1426,25 +1441,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"capitals-static@workspace:packages/web":
-  version: 0.0.0-use.local
-  resolution: "capitals-static@workspace:packages/web"
-  dependencies:
-    "@apollo/client": ^3.3.14
-    chai: ^4.3.4
-    cheerio: ^1.0.0-rc.6
-    eslint: ^7.24.0
-    eslint-plugin-react: ^7.23.2
-    esm: ^3.2.25
-    graphql: ^15.5.0
-    next: 10.1.3
-    next-test-api-route-handler: ^1.2.23
-    react: 17.0.2
-    react-dom: 17.0.2
-    supertest: ^6.1.3
-  languageName: unknown
-  linkType: soft
-
 "chai@npm:^4.3.4":
   version: 4.3.4
   resolution: "chai@npm:4.3.4"
@@ -1747,21 +1743,6 @@ __metadata:
   checksum: c83e88c15428b87ff55853ec5ce961b650c7aa3de536aadebbeb2334872d86a8be57165a77996f3b746366c950c2d51624a9b76b88fb7f18d178eca051ca1ae2
   languageName: node
   linkType: hard
-
-"countries-graphql@workspace:packages/api":
-  version: 0.0.0-use.local
-  resolution: "countries-graphql@workspace:packages/api"
-  dependencies:
-    apollo-server: ^2.22.2
-    chai: ^4.3.4
-    countries-list: ^2.6.1
-    eslint: ^7.24.0
-    graphql: ^15.5.0
-    graphql-request: ^3.4.0
-    provinces: ^1.11.0
-    sift: ^13.5.0
-  languageName: unknown
-  linkType: soft
 
 "countries-list@npm:^2.6.1":
   version: 2.6.1
@@ -5746,6 +5727,25 @@ resolve@^2.0.0-next.3:
   checksum: 1aa185936b2e3ec29a41a65776f4e002da95206a14f5cca0856fbddf157f025dc29191598508082bab4cfc026e69ad8e7774f34680e9c479b5a25bbf9d9f1a1c
   languageName: node
   linkType: hard
+
+"web@workspace:packages/web":
+  version: 0.0.0-use.local
+  resolution: "web@workspace:packages/web"
+  dependencies:
+    "@apollo/client": ^3.3.14
+    chai: ^4.3.4
+    cheerio: ^1.0.0-rc.6
+    eslint: ^7.24.0
+    eslint-plugin-react: ^7.23.2
+    esm: ^3.2.25
+    graphql: ^15.5.0
+    next: 10.1.3
+    next-test-api-route-handler: ^1.2.23
+    react: 17.0.2
+    react-dom: 17.0.2
+    supertest: ^6.1.3
+  languageName: unknown
+  linkType: soft
 
 "webidl-conversions@npm:^4.0.2":
   version: 4.0.2
