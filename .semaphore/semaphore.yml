@@ -57,6 +57,6 @@ blocks:
           commands:
             - yarn workspace web start &
             - sleep 5
-            - yarn workspace web integration
+            - yarn workspace web test-integration
     run:
       when: 'change_in([''/packages/api/'', ''/packages/web''], {default_branch: ''final''})'
