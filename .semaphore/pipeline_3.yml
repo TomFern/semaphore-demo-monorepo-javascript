@@ -1,0 +1,15 @@
+version: v1.0
+name: Dockerize
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Docker
+    task:
+      jobs:
+        - name: Build
+          commands:
+            - checkout
+            - cd packages/api
+            - docker build -t test-image .
