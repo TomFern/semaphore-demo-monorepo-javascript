@@ -11,6 +11,7 @@ blocks:
         commands:
           - checkout
           - sem-version node 15.14
+          - yarn install
       jobs:
         - name: Lint
           commands:
@@ -29,6 +30,7 @@ blocks:
         commands:
           - checkout
           - sem-version node 15.14
+          - yarn install
       jobs:
         - name: Lint
           commands:
