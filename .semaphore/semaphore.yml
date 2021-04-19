@@ -23,6 +23,8 @@ blocks:
             - yarn workspace api test
             - killall node
     dependencies: []
+    run:
+      when: 'change_in(''/api/'', {default_branch: ''main''})'
   - name: Web app
     dependencies: []
     task:
@@ -38,3 +40,5 @@ blocks:
         - name: Units
           commands:
             - yarn workspace web test
+    run:
+      when: 'change_in(''/web/'', {default_branch: ''main''})'
