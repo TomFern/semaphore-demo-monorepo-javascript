@@ -24,7 +24,7 @@ blocks:
             - killall node
     dependencies: []
     run:
-      when: 'change_in(''/api/'', {default_branch: ''final''})'
+      when: 'change_in(''/packages/api/'', {default_branch: ''final''})'
   - name: Web app
     dependencies: []
     task:
@@ -41,4 +41,4 @@ blocks:
           commands:
             - yarn workspace web test
     run:
-      when: 'change_in(''/web/'', {default_branch: ''final''})'
+      when: 'change_in(''/packages/web/'', {default_branch: ''final''})'
