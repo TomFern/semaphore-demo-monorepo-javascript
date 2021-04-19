@@ -89,6 +89,17 @@ $ yarn workspace api start &
 $ yarn workspace web build
 $ yarn workspace web export
 ```
+
+## Tips
+
+A note about Yarn Plug’n’play: scripts running from `Scripts` in `package.json` or with the `yarn run` command will work. But if you run a program directly as `node app.js` it will fail. Instead, run it like `yarn node app.js` this will initialize PnP.
+
+If you’re using zero-installs and accepting PRs from untrusted sources, it’s a good idea to add a cache check job somewhere in your CI pipeline. This command will re-download all the modules and check them against the cache to ensure none of the dependencies were modified maliciously.
+
+```bash
+yarn install --check-cache
+```
+
 ## License
 
 MIT License
