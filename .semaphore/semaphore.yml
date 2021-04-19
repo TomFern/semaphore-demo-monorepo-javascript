@@ -1,16 +1,38 @@
 version: v1.0
-name: First pipeline
+name: Continuous Integration Pipeline
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Test
+  - name: API service
     task:
       prologue:
         commands:
           - checkout
+          - sem-version node 15.14
       jobs:
-        - name: Test
+        - name: Lint
           commands:
-            - echo "This is the first job"
+            - yarn workspace api lint
+        - name: Units
+          commands:
+            - yarn workspace api start &
+            - sleep 5
+            - yarn workspace api test
+            - killall node
+    dependencies: []
+  - name: Web app
+    dependencies: []
+    task:
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 15.14
+      jobs:
+        - name: Lint
+          commands:
+            - yarn workspace web lint
+        - name: Units
+          commands:
+            - yarn workspace web test
