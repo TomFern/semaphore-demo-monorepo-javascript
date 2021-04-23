@@ -45,6 +45,11 @@ You can run each project independently or in combination. Check each folder to l
     $ git commit -m "finalize monorepo setup"
     $ git push
     ```
+
+You can peek at the final state of the repository in the `final` branch.
+
+![Final pipeline](./pipeline.png)
+
 ## Run development version
 
 ```bash
