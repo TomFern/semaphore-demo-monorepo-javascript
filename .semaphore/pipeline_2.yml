@@ -12,4 +12,4 @@ blocks:
           commands:
             - checkout
             - cd packages/web
-            - yarn node vercel --prod
+            - '# yarn node vercel --prod'
