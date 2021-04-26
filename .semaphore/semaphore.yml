@@ -24,7 +24,7 @@ blocks:
             - killall node
     dependencies: []
     run:
-      when: 'change_in(''/packages/api/'', {default_branch: ''final''})'
+      when: 'change_in(''/packages/api/'', {default_branch: ''main''})'
   - name: Web app
     dependencies: []
     task:
@@ -41,7 +41,7 @@ blocks:
           commands:
             - yarn workspace web test
     run:
-      when: 'change_in(''/packages/web/'', {default_branch: ''final''})'
+      when: 'change_in(''/packages/web/'', {default_branch: ''main''})'
   - name: Integration tests
     dependencies:
       - API service
@@ -59,7 +59,7 @@ blocks:
             - sleep 5
             - yarn workspace web test-integration
     run:
-      when: 'change_in([''/packages/api/'', ''/packages/web''], {default_branch: ''final''})'
+      when: 'change_in([''/packages/api/'', ''/packages/web''], {default_branch: ''main''})'
 promotions:
   - name: Deploy Web app
     pipeline_file: pipeline_2.yml
