@@ -15,9 +15,9 @@ blocks:
           commands:
             - npm install --global lerna
             - checkout
-            - cache restore
+            - 'for d in packages/*; do cache store node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d" "$d/node_modules"; done'
             - lerna exec npm install
-            - cache store
+            - 'for d in packages/*; do cache restore node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d"; done'
 promotions:
   - name: Publish to NPM
     pipeline_file: pipeline_2.yml
