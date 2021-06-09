@@ -15,9 +15,24 @@ blocks:
           commands:
             - npm install --global lerna
             - checkout
-            - 'for d in packages/*; do cache store node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d" "$d/node_modules"; done'
-            - lerna exec npm install
             - 'for d in packages/*; do cache restore node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d"; done'
+            - lerna exec npm install
+            - 'for d in packages/*; do cache store node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d" "$d/node_modules"; done'
+  - name: Tests
+    task:
+      prologue:
+        commands:
+          - npm install --global lerna
+          - checkout
+          - 'for d in packages/*; do cache restore node-modules-"$d"-$SEMAPHORE_GIT_BRANCH-$(checksum "$d/package-lock.json"),node-modules-"$d"-$SEMAPHORE_GIT_BRANCH,node-modules-"$d"; done'
+          - lerna exec npm install
+      jobs:
+        - name: Unit tests
+          commands:
+            - lerna exec npm test
+        - name: Integration
+          commands:
+            - lerna exec npm run test-integration
 promotions:
   - name: Publish to NPM
     pipeline_file: pipeline_2.yml
