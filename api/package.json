@@ -8,7 +8,7 @@
     "start": "node server.js",
     "lint": "eslint *.js tests/*.js",
     "test": "node tests/*.js ",
-    "test-integration": "echo 'No integration tests for this package"
+    "test-integration": "echo 'No integration tests for this package'"
   },
   "dependencies": {
     "apollo-server": "^2.22.2",
