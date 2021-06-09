@@ -1,0 +1,19 @@
+version: v1.0
+name: First pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Publish
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: make lint
+          commands:
+            - npm install --global lerna
+            - checkout
+            - 'echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc'
+            - lerna publish from-git --no-git-tag-version --no-push --yes
