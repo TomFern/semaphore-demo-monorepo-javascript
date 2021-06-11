@@ -1,11 +1,15 @@
 {
-  "name": "api",
+  "name": "@tomfern/api",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A GraphQL API server that servers information about countries, cities, and continents. Based on trevorblades/countries.",
   "author": "Tomas Fernandez",
   "repository": "https://github.com/TomFern/semaphore-demo-monorepo-javascript",
   "version": "1.0.0.",
   "scripts": {
     "start": "node server.js",
+    "dev": "node server.js",
     "lint": "eslint *.js tests/*.js",
     "test": "node tests/*.js ",
     "test-integration": "echo 'No integration tests for this package'"

@@ -1,5 +1,8 @@
 {
-  "name": "web",
+  "name": "@tomfern/web",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A Next.js static website showing the capitals of every country.",
   "author": "Tomas Fernandez",
   "repository": "https://github.com/TomFern/semaphore-demo-monorepo-javascript",
