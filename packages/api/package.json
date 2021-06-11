@@ -1,5 +1,5 @@
 {
-  "name": "@tomfern/api",
+  "name": "@tomfern/api2",
   "publishConfig": {
     "access": "public"
   },
@@ -26,5 +26,5 @@
     "chai": "^4.3.4",
     "eslint": "^7.24.0"
   },
-  "gitHead": "bf99039faaaa8d3c3b6f451c37d61d2c18c8f2cb"
+  "gitHead": "7dd7d6e2126c8224256cbcf4863d3ad43856ccec"
 }
