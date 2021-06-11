@@ -6,7 +6,7 @@
   "description": "A Next.js static website showing the capitals of every country.",
   "author": "Tomas Fernandez",
   "repository": "https://github.com/TomFern/semaphore-demo-monorepo-javascript",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
