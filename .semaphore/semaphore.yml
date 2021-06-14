@@ -38,12 +38,12 @@ blocks:
           commands:
             - lerna run test-integration --scope @tomfern/api2
     run:
-      when: change_in('/packages/api/')
+      when: 'change_in(''/packages/api/'', { default_branch: ''main''})'
     dependencies:
       - Install
   - name: Tests WEB
     run:
-      when: change_in('/packages/web/')
+      when: 'change_in(''/packages/web/'', { default_branch: ''main''})'
     dependencies:
       - Install
     task:
