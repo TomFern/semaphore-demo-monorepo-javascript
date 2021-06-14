@@ -43,7 +43,7 @@ blocks:
       - Install
   - name: Tests WEB
     run:
-      when: 'change_in(''/packages/web/'', { default_branch: ''main''})'
+      when: 'change_in(''/packages/web2/'', { default_branch: ''main''})'
     dependencies:
       - Install
     task:
