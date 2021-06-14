@@ -4,12 +4,12 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
+auto_cancel:
+  queued:
+    when: 'true'
 blocks:
   - name: Install
     task:
-      prologue:
-        commands:
-          - checkout
       jobs:
         - name: Bootstrap
           commands:
@@ -25,7 +25,7 @@ blocks:
           - npm install --global lerna
           - checkout
           - 'lerna exec -- cache restore node-modules-\$LERNA_PACKAGE_NAME-$SEMAPHORE_GIT_BRANCH,node-modules-\$LERNA_PACKAGE_NAME node_modules'
-          - lerna exec npm install
+          - lerna exec bootstrap
       jobs:
         - name: Lint
           commands:
