@@ -153,6 +153,15 @@ $ lerna version
 $ lerna publish from-git
 ```
 
+## Tips for coupling Lerna and Workspaces
+
+Add the following lines to `lerna.json`.
+
+```json
+ "npmClient": "yarn",
+ "useWorkspaces": true
+```
+
 ## License
 
 MIT License
