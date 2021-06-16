@@ -2,7 +2,7 @@
 
 [![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-monorepo-javascript/branches/main.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-monorepo-javascript)
 
-This demo repository teaches you how to use [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage JavaScript [monorepos](https://semaphoreci.com/blog/what-is-monorepo). You’ll build a monorepo from two separate applications.
+This demo repository teaches you how to use [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) and [Lerna](https://lerna.js.org/) to manage JavaScript [monorepos](https://semaphoreci.com/blog/what-is-monorepo). You’ll build a monorepo from two separate applications.
 
 Check the `final` branch to see the end result.
 
@@ -14,6 +14,7 @@ This repository contains two projects. Their folders are:
 - `web`: A static website generated from the information returned by the API.
 
 You can run each project independently or in combination. Check each folder to learn how to run them piecemeal. The next section shows how to run them together.
+
 ## Setup monorepo with Yarn workspaces
 
 1. Fork this repo.
@@ -94,7 +95,7 @@ $ yarn workspace web build
 $ yarn workspace web export
 ```
 
-## Tips
+## Tips for Yarn
 
 A note about Yarn Plug’n’play: scripts running from `Scripts` in `package.json` or with the `yarn run` command will work. But if you run a program directly as `node app.js` it will fail. Instead, run it like `yarn node app.js` this will initialize PnP.
 
@@ -102,6 +103,54 @@ If you’re using zero-installs and accepting PRs from untrusted sources, it’s
 
 ```bash
 yarn install --check-cache
+```
+
+## Setup a monorepo with Lerna
+
+To setup a monorepo with Lerna + NPM, first initialize the repository.
+
+```bash
+$ lerna init
+$ lerna import api
+$ lerna import web
+```
+
+Now Lerna should detect the monorepo.
+
+```bash
+$ lerna ls
+api
+web
+found 2 packages
+```
+
+With `bootstrap`, Lerna downloads dependencies with NPM and links the packages.
+
+```bash
+$ lerna bootstrap
+```
+
+Run the tests for each package in the monorepo.
+
+```bash
+$ lerna exec npm run lint
+$ lerna exec npm dev &
+$ lerna exec npm test
+$ lerna exec npm run test integration
+```
+
+Push the updates to the repository.
+
+```bash
+$ git add lerna.json package.json packages
+$ git commit -m "install lerna, ready to publish"
+```
+
+Publish the new version to NPM. You need to be already-authenticated with `npm login`.
+
+```bash
+$ lerna version
+$ lerna publish from-git
 ```
 
 ## License
